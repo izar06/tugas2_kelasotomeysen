@@ -10,11 +10,11 @@ driver1 = webdriver.Chrome(options=option)
 driver1.maximize_window()
 url_tiket = ['https://www.tiket.com/', 'https://www.tokopedia.com/', 'https://orangsiber.com', 'https://idejongkok.com', 'https://kelasotomesyen.com/']
 text = ['tiket.com', 'tokopedia.com', 'orangsiber.com', 'idejongkok.com', 'kelasotomeysen.com']
-for i, x in zip(url_tiket, text):
-    driver1.get(i)
+for prefix, url in zip(text, url_tiket):
+    driver1.get(url)
     sleep(5)
-    title = driver1.title
-    print(f'{x} - {title}')
+    # title = driver1.title
+    print(f'{prefix} - {driver1.title}')
 driver1.close()
 
 # Catatan web tiket dan tokopedia entah kenapa kalau di mode headless itu dia tidak bisa dibuka
