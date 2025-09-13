@@ -29,32 +29,33 @@ try:
     print(element)
     print('Modal Tampil')
     # Input Product Name
-    sleep(1)
-    nama_barang = 'Iphone 23 Pro'
-    driver.find_element(By.XPATH, "//input[@type='text']").send_keys(nama_barang)
-    # Input price
-    sleep(1)
-    driver.find_element(By.XPATH, "//input[@type='number']").send_keys(100)
-    #Input Stock
-    sleep(1)
-    driver.find_element(By.XPATH, "(//input[@type='number'])[2]").send_keys(1000)
-    #Click Category
-    sleep(1)
-    driver.find_element(By.XPATH, "//select[@class='w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500']").click()
-    #Pilih Category
-    sleep(1)
-    driver.find_element(By.XPATH, "//option[@value='Computers']").click()
-    # Isi Description
-    sleep(1)
-    driver.find_element(By.XPATH, "//textarea[@class='w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500']").send_keys('Test bang')
-    # Click Add Product
-    sleep(1)
-    driver.find_element(By.XPATH, "//button[@class='flex-1 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors']").click()
-    # driver.close()
+    
 except TimeoutException:
     print('Modal gk muncul om')
     pass
 
+sleep(1)
+nama_barang = 'Iphone 24 Pro'
+driver.find_element(By.XPATH, "//input[@type='text']").send_keys(nama_barang)
+# Input price
+sleep(1)
+driver.find_element(By.XPATH, "//input[@type='number']").send_keys(100)
+#Input Stock
+sleep(1)
+driver.find_element(By.XPATH, "(//input[@type='number'])[2]").send_keys(1000)
+#Click Category
+sleep(1)
+driver.find_element(By.XPATH, "//select[@class='w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500']").click()
+#Pilih Category
+sleep(1)
+driver.find_element(By.XPATH, "//option[@value='Computers']").click()
+# Isi Description
+sleep(1)
+driver.find_element(By.XPATH, "//textarea[@class='w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500']").send_keys('Test bang')
+# Click Add Product
+sleep(1)
+driver.find_element(By.XPATH, "//button[@class='flex-1 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors']").click()
+# driver.close()
 sleep(2)
 validasi = driver.find_element(By.XPATH, f"//div[contains(text(), '{nama_barang}')]").text
 print(validasi)
